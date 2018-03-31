@@ -1,5 +1,6 @@
+#!/usr/bin/env python
+
 from bin.Tasks import TaskManager
-from bin.Tasks import Task
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
         else:
             print("\nYou have no tasks saved. Add new tasks to start.")
             manager.assign()
-    print("\nFinished Taskify, bye.")
+    print("\nFinished Taskify, bye!\n")
 
 
 if __name__ == '__main__':
