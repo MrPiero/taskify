@@ -1,4 +1,7 @@
 import json
+import os.path
+file = os.path.join(os.path.expanduser("~"), "taskify", "tasks.json")
+file = os.path.normpath(file)
 
 
 class TaskManager:
@@ -6,7 +9,7 @@ class TaskManager:
         self.tasks = []
         self.load()
 
-    def load(self, filepath="tasks.json"):
+    def load(self, filepath=file):
         """Loads tasks to Task Manager
 
         This method loads the JSON file storing the tasks, then converts each one to <Task> object and then finally
@@ -25,7 +28,7 @@ class TaskManager:
         except FileNotFoundError:
             pass
 
-    def save(self, filepath="tasks.json"):
+    def save(self, filepath=file):
         """Saves tasks to JSON file.
 
         This method saves tha tasks from the Task Manager in a <dicc> array to finally store it in a JSON file.
